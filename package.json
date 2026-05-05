@@ -10,6 +10,7 @@
         "laravel-vite-plugin": "^1.2.0",
         "tailwindcss": "^3.4.17",
         "autoprefixer": "^10.4.20",
-        "postcss": "^8.4.49"
+        "postcss": "^8.4.49",
+        "@tailwindcss/forms": "^0.5.9"
     }
 }
