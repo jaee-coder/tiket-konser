@@ -8,9 +8,6 @@
   ],
   "outputDirectory": "public",
   "buildCommand": "npm run build",
-  "functions": {
-    "api/index.php": { "runtime": "vercel-php@0.8.0" }
-  },
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
