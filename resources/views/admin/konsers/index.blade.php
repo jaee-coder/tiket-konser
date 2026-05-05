@@ -1,0 +1,5 @@
+@extends('admin.layouts.app')
+@section('content')
+<div class="flex justify-between mb-6"><h1 class="text-2xl font-bold">Manajemen Konser</h1><a href="{{ route('admin.konsers.create') }}" class="bg-indigo-600 text-white px-4 py-2 rounded-lg">+ Tambah Konser</a></div>
+<div class="bg-white rounded-xl shadow overflow-x-auto"><table class="min-w-full"><thead class="bg-gray-50"><tr><th class="px-6 py-3">ID</th><th>Nama</th><th>Tanggal</th><th>Waktu</th><th>Harga</th><th>Venue</th><th class="text-right">Aksi</th></tr></thead><tbody>@foreach($konsers as $k)<tr><td>{{ $k->id_concert }}</td><td>{{ $k->nama_concert }}</td><td>{{ $k->tanggal }}</td><td>{{ $k->waktu }}</td><td>Rp {{ number_format($k->harga_dasar,0,',','.') }}</td><td>{{ $k->venue->nama_venue ?? '-' }}</td><td class="text-right space-x-2"><a href="{{ route('admin.konsers.edit', $k->id_concert) }}" class="text-indigo-600">Edit</a><form action="{{ route('admin.konsers.destroy', $k->id_concert) }}" method="POST" class="inline" onsubmit="return confirm('Hapus?')">@csrf @method('DELETE')<button type="submit" class="text-red-600">Hapus</button></form></td></tr>@endforeach</tbody></table></div>
+@endsection

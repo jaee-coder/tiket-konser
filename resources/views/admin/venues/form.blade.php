@@ -1,0 +1,4 @@
+@extends('admin.layouts.app')
+@section('content')
+<div class="max-w-2xl mx-auto bg-white rounded-xl shadow p-6"><h1 class="text-2xl font-bold mb-6">@yield('form_title')</h1><form method="POST" action="@yield('form_action')">@csrf @yield('form_method')<div class="mb-4"><label class="block font-medium">Nama Venue</label><input type="text" name="nama_venue" value="@yield('nama_venue')" class="w-full border rounded-lg px-3 py-2" required></div><div class="mb-4"><label>Alamat</label><textarea name="alamat" rows="2" class="w-full border rounded-lg px-3 py-2">@yield('alamat')</textarea></div><div class="mb-4"><label>Kapasitas</label><input type="number" name="kapasitas" value="@yield('kapasitas')" class="w-full border rounded-lg px-3 py-2" required></div><button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-lg">Simpan</button></form></div>
+@endsection
